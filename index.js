@@ -8,14 +8,14 @@ app.post("/log", (req, res) => {
   const { message } = req.body;
   if (message) {
     console.log(message);
-    res.status(200).send("Message logged");
+    res.status(200).send("Message logged server 2", message);
   } else {
     res.status(400).send("No message provided");
   }
 });
 
 app.get("/message", (req, res) => {
-  res.send("Hello, this is your message!");
+  res.send("Hello, this is your message from server: 2");
 });
 
 app.listen(port, () => {
